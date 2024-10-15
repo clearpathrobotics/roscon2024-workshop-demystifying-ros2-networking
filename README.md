@@ -34,5 +34,6 @@ The following packages are used for the workshop:
 - ros-humble-desktop (Install ROS 2 Humble: https://docs.ros.org/en/humble/Installation.html)
 - ros-humble-turtlebot4-desktop
 - git repo `roscon2024-workshop-demystifying-ros2-networking` (`git clone https://github.com/clearpathrobotics/roscon2024-workshop-demystifying-ros2-networking.git`)
-- docker-ce (Install docker: https://docs.docker.com/engine/install/)
+- docker-ce (Install docker, preferably in your laptop rather than in the VM: https://docs.docker.com/engine/install/)
 - ZettaScale container image: (Pull using `docker pull zettascaletech/roscon2024_workshop`)
+- git repo [`ZettaScaleLabs/roscon2024_workshop`](https://github.com/ZettaScaleLabs/roscon2024_workshop) (`git clone https://github.com/ZettaScaleLabs/roscon2024_workshop.git`)
