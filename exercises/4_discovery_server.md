@@ -10,6 +10,7 @@ Create a discovery server on the local host so only nodes on the same device as 
 <table>
 <tr><td><b>Terminal 1: Localhost Server</b></td></tr>
 <tr><td>
+
 Start up a discovery server on the local host.
 ```
 fastdds discovery -i 0 -l 127.0.0.1 -p 11811
