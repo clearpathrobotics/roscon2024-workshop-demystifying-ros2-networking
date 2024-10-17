@@ -6,6 +6,9 @@ The IP address of the robot's server will be: `192.168.0.IP` where `IP = 20 + ro
 
 The ID matches one to one with the ID of the server.
 
+> [!NOTE]
+> Make sure to open new terminal windows with clean environments to avoid potential conflicting environment issues.
+
 <table>
 <tr><td><b>Terminal 1: Teleop Turtlebot</b></td></tr>
 <tr><td>
