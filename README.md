@@ -1,6 +1,6 @@
 # ROSCon 2024 Workshop: Demystifying ROS 2 Networking
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 For this workshop, you will need a way to run ROS 2 Humble with a desktop environment.  There are a few options for this but using a Virtualbox virtual machine is recommend as it has everything pre-installed.
 
 > [!TIP]
@@ -37,3 +37,20 @@ The following packages are used for the workshop:
 - docker-ce (Install docker, preferably in your laptop rather than in the VM: https://docs.docker.com/engine/install/)
 - ZettaScale container image: (Pull using `docker pull zettascaletech/roscon2024_workshop`)
 - git repo [`ZettaScaleLabs/roscon2024_workshop`](https://github.com/ZettaScaleLabs/roscon2024_workshop) (`git clone https://github.com/ZettaScaleLabs/roscon2024_workshop.git`)
+
+
+## Exercises
+
+### [1. Linux Networking](exercises/1_linux_networking.md)
+Basic linux networking debugging commands.
+
+### [2. ROS 2 Daemon](exercises/2_daemon.md)
+ROS 2 command line tools and how to use them reliably.
+
+### [3. Simple Discovery](exercises/3_simple_discovery.md)
+Node simple discovery and how to set and use domain IDs.
+
+### [4. Discovery Server](exercises/4_discovery_server.md)
+FastDDS discovery server.
+
+### [5. Turtlebots](exercises/5_turtlebots.md)
