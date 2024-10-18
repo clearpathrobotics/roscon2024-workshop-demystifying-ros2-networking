@@ -18,7 +18,8 @@ For this workshop, you will need a way to run ROS 2 Humble with a desktop enviro
 - The login credentials:
   - user: `robot`
   - password: `clearpath`
-- Use `sudo hostnamectl set-hostname NEW_HOSTNAE_HERE` to change to an unique name.
+- Use `sudo hostnamectl set-hostname NEW_HOSTNAME_HERE` to change to an unique name.
+- Install `nmap` using: `sudo apt install -y nmap`
 - Update the workshop repo using: `cd roscon2024-workshop-demystifying-ros2-networking; git pull`
 
 ### Other setup
