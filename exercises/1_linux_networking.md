@@ -43,3 +43,10 @@ iperf3 -c <servers_ip>
 
 
 ## Wireshark
+Wireshark can help look at what data packets are coming on a certain interface.  Open a terminal and run:
+
+```bash
+sudo wireshark
+```
+
+This will launch the Wireshark GUI.  If using the provided VM, select the `enp0s3` interface and click blue shark fin to begin capturing packets.  This can be left running during the workshop to see all the traffic going to the interface.
