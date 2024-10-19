@@ -17,7 +17,26 @@ Set the robot server in the discovery server variable:
 ```
 export ROS_DISCOVERY_SERVER=”;192.168.0.<IP>:11811”
 ```
-Note, you need to add N number of `;` to set the correct the ID.
+
+> [!NOTE]
+> You need to add N number of `;` to set the correct the ID.
+
+Examples:
+```
+export ROS_DISCOVERY_SERVER="192.168.0.20"            # Robot 00
+export ROS_DISCOVERY_SERVER=";192.168.0.21"           # Robot 01
+export ROS_DISCOVERY_SERVER=";;192.168.0.22"          # Robot 02
+export ROS_DISCOVERY_SERVER=";;;192.168.0.23"         # Robot 03
+export ROS_DISCOVERY_SERVER=";;;;192.168.0.24"        # Robot 04
+export ROS_DISCOVERY_SERVER=";;;;;192.168.0.25"       # Robot 05
+export ROS_DISCOVERY_SERVER=";;;;;;192.168.0.26"      # Robot 06
+export ROS_DISCOVERY_SERVER=";;;;;;;192.168.0.27"     # Robot 07
+export ROS_DISCOVERY_SERVER=";;;;;;;;192.168.0.28"    # Robot 08
+export ROS_DISCOVERY_SERVER=";;;;;;;;;192.168.0.29"   # Robot 09
+export ROS_DISCOVERY_SERVER=";;;;;;;;;;192.168.0.30"  # Robot 10
+export ROS_DISCOVERY_SERVER=";;;;;;;;;;;192.168.0.31" # Robot 11
+```
+
 
 Then, set the terminal as super client:
 ```
@@ -39,10 +58,15 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r __ns:=/<tb_ns
 </td></tr>
 </table>
 
-## Bandwidth
+## Bandwidth (Optional)
 <table>
 <tr><td><b>Terminal 1: Camera Test</b></td></tr>
 <tr><td>
+
+Install the FFMPEG image transport plugin:
+```
+sudo apt install ros-humble-ffmpeg-image-transport
+```
 
 Try to retrieve the camera topic:
 ```
@@ -50,6 +74,27 @@ ros2 topic hz /<tb_ns>/oakd/rgb/preview/image_raw
 ```
 
 If you're lucky you might get some packets through. It is likely that no data will reach your device.
+
+Instead, try the FFMPEG topic which has encoded image data.
+```
+ros2 topic hz /<tb_ns>/oakd/rgb/preview/image_raw/ffmpeg
+```
+
+You won't be able to view the image data in RViz while it is encoded. Instead, decode it using the republisher node:
+```
+ros2 run image_transport republish ffmpeg in/ffmpeg:=/<tb_ns>/oakd/rgb/preview/image_raw/ffmpeg raw out:=/<unique_namespace>/oakd/decoded/image
+```
+
+Now, you should be able to get the image data as a standard image topic:
+```
+ros2 topic hz /<unique_namespace>/oakd/decoded/image
+ros2 topic bw /<unique_namespace>/oakd/decoded/image
+```
+
+Then, open RViz and view the image:
+```
+rviz2
+```
 
 </td></tr>
 </table>
